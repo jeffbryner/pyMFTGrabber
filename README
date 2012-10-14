@@ -1,0 +1,14 @@
+
+2012 Jeff Bryner
+Script to retrieve the Master File Table (MFT) record for an NTFS file system from a live system. 
+
+Usage: 
+Victim/Client NTFS/Windows box: 
+ pyMFTGrabber.py -f "\\.C:" -s 10.200.1.1 -p 6666
+
+Forensic workstation at 10.200.1.1: 
+nc -l -p 6666 >mft.dd
+
+You can then use the analyzeMFT.py ( https://github.com/dkovar/analyzeMFT ) to decode the MFT
+and it's associated file records.
+
