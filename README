@@ -12,3 +12,4 @@ nc -l -p 6666 >mft.dd
 You can then use the analyzeMFT.py ( https://github.com/dkovar/analyzeMFT ) to decode the MFT
 and it's associated file records.
 
+Demo at: http://www.youtube.com/watch?v=uKSM_kbpn4g
