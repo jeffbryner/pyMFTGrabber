@@ -4,7 +4,7 @@ Script to retrieve the Master File Table (MFT) record for an NTFS file system fr
 
 Usage: 
 Victim/Client NTFS/Windows box: 
- python pyMFTGrabber.py -f "\\.C:" -s 10.200.1.1 -p 6666
+ python pyMFTGrabber.py -f "\\.\C:" -s 10.200.1.1 -p 6666
  (or compile it using pyinstaller and run without python)
 
 Forensic workstation at 10.200.1.1: 
