@@ -4,12 +4,17 @@ Script to retrieve the Master File Table (MFT) record for an NTFS file system fr
 
 Usage: 
 Victim/Client NTFS/Windows box: 
- pyMFTGrabber.py -f "\\.C:" -s 10.200.1.1 -p 6666
+ python pyMFTGrabber.py -f "\\.C:" -s 10.200.1.1 -p 6666
+ (or compile it using pyinstaller and run without python)
 
 Forensic workstation at 10.200.1.1: 
 nc -l -p 6666 >mft.dd
 
-You can then use the analyzeMFT.py ( https://github.com/dkovar/analyzeMFT ) to decode the MFT
-and it's associated file records.
+You can then use several tools to decode the MFT records: 
+1) analyzeMFT.py ( https://github.com/dkovar/analyzeMFT )
+	analyzeMFT.py -f mft.dd -o mft.out
+
+2) INDXParse (https://github.com/williballenthin/INDXParse )
+	MFTINDX.py -t MFT -m -d mft.dd > mft.out
 
 Demo at: http://www.youtube.com/watch?v=uKSM_kbpn4g
